@@ -15,8 +15,47 @@ export class Profile extends React.Component {
 
         return (
             <div className='profile'>
-                <img className='playerLogo' src={`${PROFILE_PIC_URL_PREFIX}/${this.props.playerId}.png`} alt="playerImg" />
-                <img className='teamLogo' src={`${TEAM_PIC_URL_PREFIX}/${teamAbbreviation}_logo.svg`} alt='teamImg'/>
+                <div className='profile-entry player-name'>
+                    {`${playerName}`}
+                </div>
+                <img
+                    className='playerLogo'
+                    src={`${PROFILE_PIC_URL_PREFIX}/${this.props.playerId}.png`}
+                    alt="playerImg"
+                />
+                <div className='profile-entry'>
+                    <div className='profile-entry-left'>Team</div>
+                    <div className='profile-entry-right'>{`${teamCity} ${teamName}`}</div>
+                </div>
+                <img
+                    className='teamLogo'
+                    src={`${TEAM_PIC_URL_PREFIX}/${teamAbbreviation}_logo.svg`}
+                    alt='teamImg'
+                />
+                <div className='profile-entry'>
+                    <div className='profile-entry-left'>Height</div>
+                    <div className='profile-entry-right'>{`${height}`}</div>
+                </div>
+                <div className='profile-entry'>
+                    <div className='profile-entry-left'>Weight</div>
+                    <div className='profile-entry-right'>{`${weight}`}</div>
+                </div>
+                <div className='profile-entry'>
+                    <div className='profile-entry-left'>PTS</div>
+                    <div className='profile-entry-right'>{`${pts}`}</div>
+                </div>
+                <div className='profile-entry'>
+                    <div className='profile-entry-left'>REB</div>
+                    <div className='profile-entry-right'>{`${reb}`}</div>
+                </div>
+                <div className='profile-entry'>
+                    <div className='profile-entry-left'>AST</div>
+                    <div className='profile-entry-right'>{`${ast}`}</div>
+                </div>
+                <div className='profile-entry'>
+                    <div className='profile-entry-left'>PIE</div>
+                    <div className='profile-entry-right'>{`${pie}`}</div>
+                </div>
             </div>
         );
     }

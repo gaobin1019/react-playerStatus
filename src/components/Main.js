@@ -10,12 +10,12 @@ export class Main extends React.Component {
     };
 
     componentDidMount() {
-        this.loadPlayerInfo('Kevin Love');
+        this.loadPlayerInfo(201567);
     }
 
-    loadPlayerInfo = (name) => {
+    loadPlayerInfo = (id) => {
         nba.stats.playerInfo({
-            PlayerID: nba.findPlayer(name).playerId
+            PlayerID: id
         }).then((info) => {
             const playerInfo = Object.assign(info.commonPlayerInfo[0], info.playerHeadlineStats[0]);
             console.log(playerInfo);

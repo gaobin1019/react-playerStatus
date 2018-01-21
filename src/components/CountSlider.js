@@ -8,7 +8,7 @@ export class CountSlider extends React.Component {
 
     onChange = (value) => {
         this.setState({
-            inputValue: (isNaN(Number(value)) || value === '') ? 2 : value,
+            inputValue: (isNaN(Number(value)) || value === '') ? 1 : value,
         });
 
         this.props.changeCount(value);

@@ -8,6 +8,7 @@ export class Profile extends React.Component {
             teamCity,
             teamName,
             playerName,
+            playerId,
             height,
             weight,
             pts, reb, ast, pie,
@@ -20,7 +21,7 @@ export class Profile extends React.Component {
                 </div>
                 <img
                     className='playerLogo'
-                    src={`${PROFILE_PIC_URL_PREFIX}/${this.props.playerId}.png`}
+                    src={playerId ? `${PROFILE_PIC_URL_PREFIX}/${playerId}.png` : ''}
                     alt="playerImg"
                 />
                 <div className='profile-entry'>
@@ -29,7 +30,7 @@ export class Profile extends React.Component {
                 </div>
                 <img
                     className='teamLogo'
-                    src={`${TEAM_PIC_URL_PREFIX}/${teamAbbreviation}_logo.svg`}
+                    src={teamAbbreviation ? `${TEAM_PIC_URL_PREFIX}/${teamAbbreviation}_logo.svg` : ''}
                     alt='teamImg'
                 />
                 <div className='profile-entry'>

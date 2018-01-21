@@ -17,7 +17,7 @@ export class DataViewContainer extends React.Component {
     render() {
         return (
             <div className='data-view'>
-                <ShotChart count={this.state.count} playerId={this.props.playerId} />
+                <ShotChart count={this.state.count} playerId={this.props.playerInfo.playerId} />
                 <div className='filters'>
                     <CountSlider
                         count={this.state.count}

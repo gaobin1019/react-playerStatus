@@ -3,19 +3,10 @@ import nba from 'nba';
 import * as d3 from 'd3';
 import { hexbin } from 'd3-hexbin';
 import { court, shots } from 'd3-shotchart';
-import PropTypes from 'prop-types';
 
 window.d3_hexbin = { hexbin : hexbin};
 
 export class ShotChart extends React.Component {
-    state = {
-        threshold: 2,
-    };
-
-    static propTypes = {
-        playerId: PropTypes.number.isRequired,
-    };
-
     draw = (threshold) => {
         nba.stats.shots({
             PlayerID: this.props.playerId,

@@ -3,6 +3,8 @@ import nba from 'nba';
 import * as d3 from 'd3';
 import { hexbin } from 'd3-hexbin';
 import { court, shots } from 'd3-shotchart';
+import PropTypes from 'prop-types';
+
 
 window.d3_hexbin = { hexbin : hexbin};
 
@@ -22,7 +24,10 @@ export class ShotChart extends React.Component {
             const courtSelection = d3.select('#shot-chart');
             courtSelection.html('');
             const chart_court = court().width(500);
-            const chart_shots = shots().shotRenderThreshold(threshold).displayToolTips(true).displayType(this.props.chartType);
+            const chart_shots = shots().
+                shotRenderThreshold(threshold).
+                displayToolTips(this.props.showTooltip).
+                displayType(this.props.chartType);
             courtSelection.call(chart_court);
             courtSelection.datum(final_shots).call(chart_shots);
         });
@@ -42,3 +47,9 @@ export class ShotChart extends React.Component {
         );
     }
 }
+
+//type checking
+ShotChart.propTypes = {
+    chartType: PropTypes.string.isRequired,
+    playerId: PropTypes.number.isRequired,
+};
